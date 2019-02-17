@@ -1,0 +1,101 @@
+﻿using System;
+
+namespace DNP2.Assignment1.CarModel
+{
+    public class Car : IComparable<Car>
+    {
+        public string Model { get; set; }
+        public string ManufacturingCountry { get; set; }
+        public double MaxSpeed { get; set; }
+        public double HorsePower { get; set; }
+        public int EngineSize { get; set; }
+        public int RoundsPerMinute { get; set; }
+        public double Acceleration { get; set; }
+        public int Cylinders { get; set; }
+
+        public int CompareTo(Car other)
+        {
+            if (ReferenceEquals(this, other))
+            {
+                return 0;
+            }
+            if (ReferenceEquals(null, other))
+            {
+                return 1;
+            }
+            return MaxSpeed.CompareTo(other.MaxSpeed);
+        }
+
+        public int CompareToByHorsePower(Car other)
+        {
+            if (ReferenceEquals(this, other))
+            {
+                return 0;
+            }
+            if (ReferenceEquals(null, other))
+            {
+                return 1;
+            }
+            return HorsePower.CompareTo(other.HorsePower);
+        }
+
+        public int CompareToByRoundsPerMinute(Car other)
+        {
+            if (ReferenceEquals(this, other))
+            {
+                return 0;
+            }
+            if (ReferenceEquals(null, other))
+            {
+                return 1;
+            }
+            return RoundsPerMinute.CompareTo(other.RoundsPerMinute);
+        }
+
+        public int CompareToByEngineSize(Car other)
+        {
+            if (ReferenceEquals(this, other))
+            {
+                return 0;
+            }
+            if (ReferenceEquals(null, other))
+            {
+                return 1;
+            }
+            return EngineSize.CompareTo(other.EngineSize);
+        }
+
+        public int CompareToByAcceleration(Car other)
+        {
+            if (ReferenceEquals(this, other))
+            {
+                return 0;
+            }
+            if (ReferenceEquals(null, other))
+            {
+                return 1;
+            }
+            return Acceleration.CompareTo(other.Acceleration);
+        }
+
+        public int CompareToByCylinders(Car other)
+        {
+            if (ReferenceEquals(this, other))
+            {
+                return 0;
+            }
+            if (ReferenceEquals(null, other))
+            {
+                return 1;
+            }
+            return Cylinders.CompareTo(other.Cylinders);
+        }
+
+        public override string ToString()
+        {
+            return $"Car [Model: {Model}, ManufacturingCountry: {ManufacturingCountry}, MaxSpeed: {MaxSpeed}, " +
+                   $"HorsePower: {HorsePower}, EngineSize: {EngineSize}, RoundsPerMinute: {RoundsPerMinute}, " +
+                   $"Acceleration: {Acceleration}, Cylinders: {Cylinders}]";
+        }
+    }
+}
