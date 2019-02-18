@@ -19,7 +19,7 @@ namespace DNP2.Assignment1.CarTest
                     RoundsPerMinute = 5900,
                     EngineSize = 2994,
                     Acceleration = 6.0,
-                    Cylinders = 6
+                    Cylinders = 10
                 },
                 new Car
                 {
@@ -30,7 +30,7 @@ namespace DNP2.Assignment1.CarTest
                     RoundsPerMinute = 6100,
                     EngineSize = 310,
                     Acceleration = 12.0,
-                    Cylinders = 6
+                    Cylinders = 8
                 },
                 new Car
                 {
