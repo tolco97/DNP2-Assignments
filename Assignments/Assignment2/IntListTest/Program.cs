@@ -59,7 +59,7 @@ namespace DNP2.Assignment2.IntListTest
 
             // Sum and print all numbers in the list
             int sum = 0;
-            intList.Act(i => sum += i);
+            intList.Act(delegate(int x) { sum += x; });
             Console.WriteLine($"\nThe sum of all the numbers is {sum}");
         }
     }
