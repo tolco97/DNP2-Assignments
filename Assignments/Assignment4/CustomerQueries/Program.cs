@@ -48,6 +48,8 @@ namespace CustomerQueries
             PrintTotalCostOfAllOrders(customers);
         }
 
+        #region Helpers
+
         private static Product CreateProduct(string name, decimal price)
         {
             return new Product
@@ -75,6 +77,8 @@ namespace CustomerQueries
                 Quantity = quantity
             };
         }
+
+        #endregion
 
         #region Queries
 
