@@ -124,7 +124,9 @@ namespace CustomerQueries
 
         private static void PrintTotalCostOfAllOrders(IEnumerable<Customer> customers)
         {
-            var totalCost = customers.Sum(customer => customer.Orders.Select(order => order.Product).Sum(product => product.Price));
+            var totalCost = customers.Sum(customer => customer.Orders
+                                    .Select(order => order.Product)
+                                    .Sum(product => product.Price));
             Console.WriteLine(totalCost);
         }
 
