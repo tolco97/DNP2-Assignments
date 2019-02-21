@@ -116,8 +116,8 @@ namespace CustomerQueries
         private static void PrintNamesAndPriceOfProducts(IEnumerable<Customer> customers)
         {
             var namesAndProductSum = customers.ToDictionary(customer => customer.Name, customer => customer.Orders
-                                                .Select(order => order.Product)
-                                                .Sum(product => product.Price));
+                                              .Select(order => order.Product)
+                                              .Sum(product => product.Price));
             Console.WriteLine(string.Join("\n", namesAndProductSum));
             Console.WriteLine();
         }
@@ -125,8 +125,8 @@ namespace CustomerQueries
         private static void PrintTotalCostOfAllOrders(IEnumerable<Customer> customers)
         {
             var totalCost = customers.Sum(customer => customer.Orders
-                                    .Select(order => order.Product)
-                                    .Sum(product => product.Price));
+                                     .Select(order => order.Product)
+                                     .Sum(product => product.Price));
             Console.WriteLine(totalCost);
         }
 
