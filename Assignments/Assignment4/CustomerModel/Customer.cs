@@ -18,11 +18,7 @@ namespace DNP2.Assignment4.CustomerModel
         {
             get
             {
-                if (Orders == null)
-                {
-                    return 0;
-                }
-                return Orders.Sum(order => order.Product.Price);
+                return Orders?.Sum(order => order.Product.Price) ?? 0;
             }
         }
 
@@ -32,11 +28,7 @@ namespace DNP2.Assignment4.CustomerModel
 
         public bool HasOrderedProduct(string productName)
         {
-            if (Orders == null)
-            {
-                return false;
-            }
-            return Orders.Any(order => string.Equals(order.Product.Name, productName));
+            return Orders != null && Orders.Any(order => string.Equals(order.Product.Name, productName));
         }
 
         #endregion
