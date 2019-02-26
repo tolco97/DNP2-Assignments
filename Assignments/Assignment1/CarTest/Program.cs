@@ -19,24 +19,24 @@ namespace DNP2.Assignment1.CarTest
                     RoundsPerMinute = 5900,
                     EngineSize = 2994,
                     Acceleration = 6.0,
-                    Cylinders = 10
+                    Cylinders = 6
                 },
                 new Car
                 {
                     Model = "BMW",
                     ManufacturingCountry = "Germany",
-                    HorsePower = 220.5,
+                    HorsePower = 230.5,
                     MaxSpeed = 210,
                     RoundsPerMinute = 6100,
                     EngineSize = 310,
                     Acceleration = 12.0,
-                    Cylinders = 8
+                    Cylinders = 6
                 },
                 new Car
                 {
                     Model = "Subaru Forester",
                     ManufacturingCountry = "Japan",
-                    HorsePower = 220.5,
+                    HorsePower = 240.5,
                     MaxSpeed = 200,
                     RoundsPerMinute = 6000,
                     EngineSize = 3000,
@@ -70,40 +70,35 @@ namespace DNP2.Assignment1.CarTest
         private static void TestCompareToByHorsePower(List<Car> cars)
         {
             Console.WriteLine("TestCompareToByHorsePower:");
-            cars.Sort((car, otherCar) => car.CompareToByHorsePower(otherCar));
-            Console.WriteLine(string.Join("\n", cars));
+            PlayGame(cars[0], cars[1], (car, other) => car.CompareToByHorsePower(other));
             Console.WriteLine();
         }
 
         private static void TestCompareToByRoundsPerMinute(List<Car> cars)
         {
             Console.WriteLine("TestCompareToByRoundsPerMinute:");
-            cars.Sort((car, otherCar) => car.CompareToByRoundsPerMinute(otherCar));
-            Console.WriteLine(string.Join("\n", cars));
+            PlayGame(cars[0], cars[1], (car, other) => car.CompareToByRoundsPerMinute(other));
             Console.WriteLine();
         }
 
         private static void TestCompareToByEngineSize(List<Car> cars)
         {
             Console.WriteLine("TestCompareToByEngineSize:");
-            cars.Sort((car, otherCar) => car.CompareToByEngineSize(otherCar));
-            Console.WriteLine(string.Join("\n", cars));
+            PlayGame(cars[0], cars[1], (car, other) => car.CompareToByEngineSize(other));
             Console.WriteLine();
         }
 
         private static void TestCompareToByAcceleration(List<Car> cars)
         {
             Console.WriteLine("TestCompareToByAcceleration:");
-            cars.Sort((car, otherCar) => car.CompareToByAcceleration(otherCar));
-            Console.WriteLine(string.Join("\n", cars));
+            PlayGame(cars[0], cars[1], (car, other) => car.CompareToByAcceleration(other));
             Console.WriteLine();
         }
 
         private static void TestCompareToByCylinders(List<Car> cars)
         {
             Console.WriteLine("TestCompareToByCylinders:");
-            cars.Sort((car, otherCar) => car.CompareToByCylinders(otherCar));
-            Console.WriteLine(string.Join("\n", cars));
+            PlayGame(cars[0], cars[1], (car, other) => car.CompareToByCylinders(other));
             Console.WriteLine();
         }
 
@@ -114,7 +109,7 @@ namespace DNP2.Assignment1.CarTest
                 Cars = cars
             };
             Console.WriteLine("TestFindCarsByMaxSpeed above 201 km/h");
-            var matchingCars = hand.FindCarsByMaxSpeed(201);
+            IList<Car> matchingCars = hand.FindCarsByMaxSpeed(201);
             Console.WriteLine(string.Join("\n", matchingCars));
             Console.WriteLine();
 
@@ -123,5 +118,23 @@ namespace DNP2.Assignment1.CarTest
             Console.WriteLine(string.Join("\n", matchingCars));
             Console.WriteLine();
         }
+
+        private static void PlayGame(Car c1, Car c2, Func<Car, Car, int> compareCars)
+        {
+            int comparisonResult = compareCars(c1, c2);
+            if (comparisonResult == -1)
+            {
+                Console.WriteLine($"{c2.Model} beats {c1.Model}");
+            }
+            else if (comparisonResult == 1)
+            {
+                Console.WriteLine($"{c1.Model} beats {c2.Model}");
+            }
+            else
+            {
+                Console.WriteLine($"Draw between {c1.Model} and {c2.Model}");
+            }
+        }
+
     }
 }
