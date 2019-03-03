@@ -53,8 +53,8 @@ namespace DNP2.Assignment7.HeavyWork
             // 4) If not all 3 tasks are completed within 8 seconds indicate that there is still work to be done
             await Task.Delay(8000).ContinueWith(postDelayTask =>
             {
-                bool anyTaskStillRunning = _heavyTasks.Any(task => task.Status != TaskStatus.RanToCompletion);
-                if (anyTaskStillRunning)
+                bool anyTaskStillIncomplete = _heavyTasks.Any(task => !task.IsCompleted);
+                if (anyTaskStillIncomplete)
                 {
                     Dispatcher.Invoke(() => OutputTextBox.Text += "Still work to do...\n");
                 }

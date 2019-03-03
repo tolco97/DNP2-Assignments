@@ -6,7 +6,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TextBox Name="OutputTextBox" HorizontalAlignment="Left" Height="271" Margin="68,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="669"/>
+        <TextBox Name="OutputTextBox" IsReadOnly="True" HorizontalAlignment="Left" Height="271" Margin="68,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="669"/>
         <Button Name="StartButton" Content="Start" HorizontalAlignment="Left" Margin="330,323,0,0" VerticalAlignment="Top" Width="128" Height="72" Click="StartButtonOnClick"/>
     </Grid>
 </Window>
