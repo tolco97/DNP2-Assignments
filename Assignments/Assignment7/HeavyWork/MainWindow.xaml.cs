@@ -26,7 +26,7 @@ namespace DNP2.Assignment7.HeavyWork
             if (OutputTextBox.Text.Length > 0 || _heavyTasks.Count > 0)
             {
                 OutputTextBox.Text = string.Empty;
-                _heavyTasks.ForEach(task => task.Dispose());
+                _heavyTasks.ForEach(task => task?.Dispose());
                 _heavyTasks.Clear();
             }
 
@@ -45,7 +45,7 @@ namespace DNP2.Assignment7.HeavyWork
             });
 
             // 3) Update label when all 3 tasks are completed
-            await Task.WhenAll(_heavyTasks).ContinueWith(task =>
+            await Task.WhenAll(_heavyTasks).ContinueWith(postCompletionTask =>
             {
                 Dispatcher.Invoke(() => OutputTextBox.Text += $"All {_heavyTasks.Count} tasks completed\n"); 
             });
