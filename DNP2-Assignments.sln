@@ -25,7 +25,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HeavyWork", "Assignments\As
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assignment5", "Assignment5", "{8620B459-6268-4F2F-A07A-39A2574014FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultimediaWPF", "MultimediaWPF\MultimediaWPF.csproj", "{C33BA91C-8B48-465C-86FC-8780B019D95C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultimediaWPF", "Assignments\Assignment5\MultimediaWPF\MultimediaWPF.csproj", "{C33BA91C-8B48-465C-86FC-8780B019D95C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
