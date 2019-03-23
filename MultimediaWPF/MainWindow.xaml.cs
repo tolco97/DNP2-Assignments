@@ -25,22 +25,17 @@ namespace DNP2.Assignment5.MultimediaWPF
                 Multimedia newMultimedia = addNewItemWindow.CreatedMultimedia;
 
                 // Create new list box item
-                var newMultimediaItem = new ListBoxItem
+                var newMultimediaListBoxItem = new ListBoxItem
                 {
                     Content = $"Artist: {newMultimedia.Artist} - Genre: {newMultimedia.Genre} - Title: {newMultimedia.Title} - MediaType: {newMultimedia.Type.ToString()}"
                 };
                 
                 // Click event for multimedia button
-                newMultimediaItem.Selected += (o, args) =>
+                newMultimediaListBoxItem.Selected += (o, args) =>
                 {
-                    SelectedMultimediaTextBox.Text = newMultimediaItem.Content.ToString();
+                    SelectedMultimediaTextBox.Text = newMultimediaListBoxItem.Content.ToString();
                 };
-                MultimediaListBox.Items.Add(newMultimediaItem);
-            }
-            else
-            {
-                // Show error message when invalid input
-                MessageBox.Show("Invalid input.", "Invalid input", MessageBoxButton.OK, MessageBoxImage.Error);
+                MultimediaListBox.Items.Add(newMultimediaListBoxItem);
             }
         }
     }

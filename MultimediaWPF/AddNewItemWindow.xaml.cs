@@ -48,8 +48,8 @@ namespace DNP2.Assignment5.MultimediaWPF
             // A missing text field - fail
             if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(artist) || string.IsNullOrWhiteSpace(genre))
             {
-                DialogResult = false;
-                Close();
+                // Show error message when invalid input
+                MessageBox.Show("Invalid input. Please revise the multimedia data.", "Invalid input", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 

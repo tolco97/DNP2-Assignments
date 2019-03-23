@@ -11,7 +11,8 @@
         <Button Name="AddNewMultimediaButton" Content="Add new Multimedia" HorizontalAlignment="Left"
                 Margin="325,378,0,0" VerticalAlignment="Top"
                 Width="152" Click="AddMultimediaOnClick" />
-        <TextBox Name="SelectedMultimediaTextBox" HorizontalAlignment="Left" Height="23" Margin="0,22,-0.4,0"
-                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="794" IsReadOnly="True" />
+        <TextBox Name="SelectedMultimediaTextBox" HorizontalAlignment="Left" Height="23" Margin="191,22,0,0"
+                 TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="532" IsReadOnly="True" />
+        <Label Content="Currently selected:" HorizontalAlignment="Left" Margin="68,21,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
