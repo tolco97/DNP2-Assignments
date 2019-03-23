@@ -27,7 +27,7 @@ namespace DNP2.Assignment5.MultimediaWPF
                 // Create new list box item
                 var newMultimediaItem = new ListBoxItem
                 {
-                    Content = $"Artist: {newMultimedia.Artist} - Genre: {newMultimedia.Genre} - Title: {newMultimedia.Title} -MediaType: {newMultimedia.Type.ToString()}"
+                    Content = $"Artist: {newMultimedia.Artist} - Genre: {newMultimedia.Genre} - Title: {newMultimedia.Title} - MediaType: {newMultimedia.Type.ToString()}"
                 };
                 
                 // Click event for multimedia button
