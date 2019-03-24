@@ -4,22 +4,76 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="522.973" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-        <MediaElement Name="MediaViewer" HorizontalAlignment="Left" Height="364" Margin="0,0,-0.4,0"
+        <MediaElement Name="MediaViewer" HorizontalAlignment="Left" Height="331" Margin="0,47,-0.4,0"
                       VerticalAlignment="Top" Width="794" LoadedBehavior="Manual"
-                      MediaFailed="MediaPlayer_OnMediaFailed" />
-        <Button Name="OpenButton" Content="Open" HorizontalAlignment="Left" Margin="177,369,0,0"
+                      MediaFailed="MediaPlayer_OnMediaFailed"  />
+        <Button Name="OpenButton" Content="Open" HorizontalAlignment="Left" Margin="196,427,0,0"
                 VerticalAlignment="Top" Width="81"
                 Height="41" Click="OpenButton_Click" BorderThickness="2" BorderBrush="Black" />
-        <Button Name="PlayButton" Content="Play" HorizontalAlignment="Left" Margin="291,369,0,0"
+        <Button Name="PlayButton" Content="Play" HorizontalAlignment="Left" Margin="310,427,0,0"
                 VerticalAlignment="Top" Width="81"
-                Height="41" Click="PlayButton_Click" BorderThickness="2" BorderBrush="Black" />
-        <Button Name="PauseButton" Content="Pause" HorizontalAlignment="Left" Margin="410,369,0,0"
+                Height="41" BorderThickness="2" BorderBrush="Black" Click="PlayButton_Click">
+            <Button.RenderTransform>
+                <RotateTransform x:Name="PlayTransform" Angle="0" />
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <!-- Rotate clockwise -->
+                        <Storyboard>
+                            <DoubleAnimation
+                                Storyboard.TargetName="PlayTransform"
+                                Storyboard.TargetProperty="(RotateTransform.Angle)"
+                                From="0.0" To="360" Duration="0:0:1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Name="PauseButton" Content="Pause" HorizontalAlignment="Left" Margin="429,427,0,0"
                 VerticalAlignment="Top" Width="81"
-                Height="41" Click="PauseButton_Click" BorderThickness="2" BorderBrush="Black" />
-        <Button Name="StopButton" Content="Stop" HorizontalAlignment="Left" Margin="528,369,0,0"
+                Height="41" Click="PauseButton_Click" BorderThickness="2" BorderBrush="Black">
+            <Button.RenderTransform>
+                <RotateTransform x:Name="PauseTransform" Angle="360" />
+            </Button.RenderTransform>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <!-- Rotate counter-clockwise -->
+                            <DoubleAnimation
+                                Storyboard.TargetName="PauseTransform"
+                                Storyboard.TargetProperty="(RotateTransform.Angle)"
+                                From="360" To="0" Duration="0:0:1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button Name="StopButton" Content="Stop" HorizontalAlignment="Left" Margin="547,427,0,0"
                 VerticalAlignment="Top" Width="81"
-                Height="41" Click="StopButton_OnClick" BorderThickness="2" BorderBrush="Black" />
+                Height="41" Click="StopButton_OnClick" BorderThickness="2" BorderBrush="Black" RenderTransformOrigin="0.767,0.522">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <!-- Button visible -> Button transparent -> Button visible -->
+                            <DoubleAnimation
+                                Storyboard.TargetName="StopButton"
+                                Storyboard.TargetProperty="(Button.Opacity)"
+                                From="1" To="0" Duration="0:0:1" AutoReverse="True" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Label Name="FilePlayingLabel" Content="" HorizontalAlignment="Left" Margin="41,10,0,0" VerticalAlignment="Top"
+               Width="709" />
+        <Slider Name="ProgressBar" HorizontalAlignment="Left" Margin="93,390,0,0" VerticalAlignment="Top" Width="691"
+                Height="15" ValueChanged="ProgressBar_OnValueChanged" />
+        <Label Name="ProgressLabel" HorizontalAlignment="Left" Margin="10,383,0,0" VerticalAlignment="Top"
+               Height="33" Width="56" RenderTransformOrigin="0.512,1.152" />
     </Grid>
 </Window>
