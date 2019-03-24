@@ -4,17 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="522.973" Width="800" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="522.973" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <MediaElement Name="MediaViewer" HorizontalAlignment="Left" Height="331" Margin="0,47,-0.4,0"
                       VerticalAlignment="Top" Width="794" LoadedBehavior="Manual"
-                      MediaFailed="MediaPlayer_OnMediaFailed"  />
-        <Button Name="OpenButton" Content="Open" HorizontalAlignment="Left" Margin="196,427,0,0"
+                      MediaFailed="MediaPlayer_OnMediaFailed" />
+        <Button Name="OpenButton" HorizontalAlignment="Left" Margin="196,427,0,0"
                 VerticalAlignment="Top" Width="81"
-                Height="41" Click="OpenButton_Click" BorderThickness="2" BorderBrush="Black" />
-        <Button Name="PlayButton" Content="Play" HorizontalAlignment="Left" Margin="310,427,0,0"
+                Height="41" Click="OpenButton_Click" BorderThickness="2" BorderBrush="Black">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="folder_icon.png" Height="26" Width="19" />
+                <TextBlock Width="44" TextAlignment="Center" VerticalAlignment="Center">
+                    <Run Text="Open" />
+                </TextBlock>
+            </StackPanel>
+        </Button>
+        <Button Name="PlayButton" HorizontalAlignment="Left" Margin="310,427,0,0"
                 VerticalAlignment="Top" Width="81"
                 Height="41" BorderThickness="2" BorderBrush="Black" Click="PlayButton_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="play_icon.png" Height="26" Width="19" />
+                <TextBlock Width="44" TextAlignment="Center" VerticalAlignment="Center">
+                    <Run Text="Play" />
+                </TextBlock>
+            </StackPanel>
             <Button.RenderTransform>
                 <RotateTransform x:Name="PlayTransform" Angle="0" />
             </Button.RenderTransform>
@@ -32,9 +45,15 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Button Name="PauseButton" Content="Pause" HorizontalAlignment="Left" Margin="429,427,0,0"
+        <Button Name="PauseButton" HorizontalAlignment="Left" Margin="429,427,0,0"
                 VerticalAlignment="Top" Width="81"
                 Height="41" Click="PauseButton_Click" BorderThickness="2" BorderBrush="Black">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="pause_icon.png" Height="26" Width="19" />
+                <TextBlock Width="44" TextAlignment="Center" VerticalAlignment="Center">
+                    <Run Text="Pause" />
+                </TextBlock>
+            </StackPanel>
             <Button.RenderTransform>
                 <RotateTransform x:Name="PauseTransform" Angle="360" />
             </Button.RenderTransform>
@@ -52,9 +71,16 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Button Name="StopButton" Content="Stop" HorizontalAlignment="Left" Margin="547,427,0,0"
+        <Button Name="StopButton" HorizontalAlignment="Left" Margin="547,427,0,0"
                 VerticalAlignment="Top" Width="81"
-                Height="41" Click="StopButton_OnClick" BorderThickness="2" BorderBrush="Black" RenderTransformOrigin="0.767,0.522">
+                Height="41" Click="StopButton_OnClick" BorderThickness="2" BorderBrush="Black"
+                RenderTransformOrigin="0.767,0.522">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="stop_icon.png" Height="26" Width="19" />
+                <TextBlock x:Name="StopText" Width="44" TextAlignment="Center" VerticalAlignment="Center">
+                    <Run Text="Stop" />
+                </TextBlock>
+            </StackPanel>
             <Button.Triggers>
                 <EventTrigger RoutedEvent="Button.Click">
                     <BeginStoryboard>
