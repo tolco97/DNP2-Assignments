@@ -12,6 +12,20 @@
         <Button Name="OpenButton" HorizontalAlignment="Left" Margin="196,427,0,0"
                 VerticalAlignment="Top" Width="81"
                 Height="41" Click="OpenButton_Click" BorderThickness="2" BorderBrush="Black">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <!-- Button green -> Button grey -->
+                            <ColorAnimation To="Green"
+                                            Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                            FillBehavior="Stop"
+                                            Duration="0:0:1"
+                                            AutoReverse="True" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
             <StackPanel Orientation="Horizontal">
                 <Image Source="folder_icon.png" Height="26" Width="19" />
                 <TextBlock Width="44" TextAlignment="Center" VerticalAlignment="Center">
