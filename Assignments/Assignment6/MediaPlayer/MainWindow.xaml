@@ -6,20 +6,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-        <MediaElement Name="MediaPlayer" HorizontalAlignment="Left" Height="364" Margin="0,0,-0.4,0"
-                      VerticalAlignment="Top" Width="794" LoadedBehavior="Manual" MediaFailed="MediaPlayer_OnMediaFailed" />
+        <MediaElement Name="MediaViewer" HorizontalAlignment="Left" Height="364" Margin="0,0,-0.4,0"
+                      VerticalAlignment="Top" Width="794" LoadedBehavior="Manual"
+                      MediaFailed="MediaPlayer_OnMediaFailed" />
         <Button Name="OpenButton" Content="Open" HorizontalAlignment="Left" Margin="177,369,0,0"
                 VerticalAlignment="Top" Width="81"
-                Height="41" Click="OpenButton_Click" />
+                Height="41" Click="OpenButton_Click" BorderThickness="2" BorderBrush="Black" />
         <Button Name="PlayButton" Content="Play" HorizontalAlignment="Left" Margin="291,369,0,0"
                 VerticalAlignment="Top" Width="81"
-                Height="41" Click="PlayButton_Click" />
+                Height="41" Click="PlayButton_Click" BorderThickness="2" BorderBrush="Black" />
         <Button Name="PauseButton" Content="Pause" HorizontalAlignment="Left" Margin="410,369,0,0"
                 VerticalAlignment="Top" Width="81"
-                Height="41" Click="PauseButton_Click" />
+                Height="41" Click="PauseButton_Click" BorderThickness="2" BorderBrush="Black" />
         <Button Name="StopButton" Content="Stop" HorizontalAlignment="Left" Margin="528,369,0,0"
                 VerticalAlignment="Top" Width="81"
-                Height="41" Click="StopButton_OnClick" />
-
+                Height="41" Click="StopButton_OnClick" BorderThickness="2" BorderBrush="Black" />
     </Grid>
 </Window>

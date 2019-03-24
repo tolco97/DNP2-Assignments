@@ -18,23 +18,23 @@ namespace DNP2.Assignments.MediaPlayer
         {
             var openFileDialog = new OpenFileDialog();
             openFileDialog.ShowDialog();
-            MediaPlayer.Source = new Uri(openFileDialog.FileName);
-            MediaPlayer.Play();
+            MediaViewer.Source = new Uri(openFileDialog.FileName);
+            MediaViewer.Play();
         }
 
         private void PlayButton_Click(object sender, RoutedEventArgs e)
         {
-            MediaPlayer.Play();
+            MediaViewer.Play();
         }
 
         private void PauseButton_Click(object sender, RoutedEventArgs e)
         {
-            MediaPlayer.Pause();
+            MediaViewer.Pause();
         }
 
         private void StopButton_OnClick(object sender, RoutedEventArgs e)
         {
-            MediaPlayer.Stop();
+            MediaViewer.Stop();
         }
 
         private void MediaPlayer_OnMediaFailed(object sender, ExceptionRoutedEventArgs e)
