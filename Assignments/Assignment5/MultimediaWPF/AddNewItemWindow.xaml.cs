@@ -14,7 +14,7 @@ namespace DNP2.Assignment5.MultimediaWPF
             PopulateMediaTypesComboBox();
         }
 
-        public Multimedia CreatedMultimedia { get; private set; }
+        public Multimedia NewMultimedia { get; private set; }
 
         /// <summary>
         /// Populate the combo box with all values of the MediaType enum
@@ -53,7 +53,7 @@ namespace DNP2.Assignment5.MultimediaWPF
             }
 
             // Create multimedia object
-            CreatedMultimedia = new Multimedia
+            NewMultimedia = new Multimedia
             {
                 Title = title,
                 Artist = artist,
