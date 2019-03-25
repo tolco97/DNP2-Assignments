@@ -23,17 +23,17 @@ namespace DNP2.Assignment5.MultimediaWPF
             {
                 // Get created object
                 Multimedia newMultimedia = addNewItemWindow.CreatedMultimedia;
-
+                
                 // Create new list box item
                 var newMultimediaListBoxItem = new ListBoxItem
                 {
-                    Content = $"Artist: {newMultimedia.Artist} - Genre: {newMultimedia.Genre} - Title: {newMultimedia.Title} - MediaType: {newMultimedia.Type.ToString()}"
+                    Content = newMultimedia.ToString()
                 };
                 
                 // Click event for multimedia button
                 newMultimediaListBoxItem.Selected += (o, args) =>
                 {
-                    SelectedMultimediaTextBox.Text = newMultimediaListBoxItem.Content.ToString();
+                    SelectedMultimediaTextBox.Text = newMultimedia.ToString();
                 };
                 MultimediaListBox.Items.Add(newMultimediaListBoxItem);
             }

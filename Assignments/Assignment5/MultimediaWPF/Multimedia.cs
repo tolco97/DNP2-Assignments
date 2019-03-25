@@ -14,6 +14,11 @@ namespace DNP2.Assignment5.MultimediaWPF
 
         public MediaType Type { get; set; }
 
+        public override string ToString()
+        {
+            return $"Artist: {Artist} - Genre: {Genre} - Title: {Title} - MediaType: {Type.ToString()}";
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         [NotifyPropertyChangedInvocator]
