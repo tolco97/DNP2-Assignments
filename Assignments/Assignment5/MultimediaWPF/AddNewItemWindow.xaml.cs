@@ -14,7 +14,7 @@ namespace DNP2.Assignment5.MultimediaWPF
             PopulateMediaTypesComboBox();
         }
 
-        public Multimedia CreatedMultimedia { get; set; }
+        public Multimedia CreatedMultimedia { get; private set; }
 
         /// <summary>
         /// Populate the combo box with all values of the MediaType enum
@@ -39,13 +39,12 @@ namespace DNP2.Assignment5.MultimediaWPF
 
         private void AddNewMultimediaOnClick(object sender, RoutedEventArgs e)
         {
-            // Get all values
+            // Get all user input
             string title = TitleTextBox.Text;
             string artist = ArtistTextBox.Text;
             string genre = GenreTextBox.Text;
             var mediaType = (MediaType) Enum.Parse(typeof(MediaType), MediaTypeComboBox.SelectionBoxItem.ToString());
-
-            // A missing text field - fail
+            
             if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(artist) || string.IsNullOrWhiteSpace(genre))
             {
                 // Show error message when invalid input
