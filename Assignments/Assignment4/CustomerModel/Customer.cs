@@ -28,7 +28,7 @@ namespace DNP2.Assignment4.CustomerModel
 
         public bool HasOrderedProduct(string productName)
         {
-            return Orders != null && Orders.Any(order => string.Equals(order.Product.Name, productName));
+            return Orders?.Any(order => string.Equals(order.Product.Name, productName)) ?? false;
         }
 
         #endregion
