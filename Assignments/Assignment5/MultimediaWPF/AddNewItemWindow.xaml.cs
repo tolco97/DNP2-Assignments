@@ -22,10 +22,10 @@ namespace DNP2.Assignment5.MultimediaWPF
         private void PopulateMediaTypesComboBox()
         {
             // Get all types of the Media Type enum
-            string[] mediaTypes = Enum.GetNames(typeof(MediaType));
+            string[] allMediaTypes = Enum.GetNames(typeof(MediaType));
 
             // Add all values to combo box
-            foreach (string mediaType in mediaTypes)
+            foreach (string mediaType in allMediaTypes)
             {
                 MediaTypeComboBox.Items.Add(mediaType);
             }
