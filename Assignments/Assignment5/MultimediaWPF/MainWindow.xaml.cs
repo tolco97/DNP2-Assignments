@@ -21,7 +21,7 @@ namespace DNP2.Assignment5.MultimediaWPF
 
             if (closed.HasValue && closed.Value)
             {
-                // Get created object
+                // Get created multimedia
                 Multimedia newMultimedia = addNewItemWindow.NewMultimedia;
                 
                 // Create new list box item
