@@ -31,10 +31,7 @@ namespace DNP2.Assignment5.MultimediaWPF
             }
 
             // Point first item
-            if (MediaTypeComboBox.Items.Count > 0)
-            {
-                MediaTypeComboBox.SelectedIndex = 0;
-            }
+            MediaTypeComboBox.SelectedIndex = 0;
         }
 
         private void AddNewMultimediaOnClick(object sender, RoutedEventArgs e)
