@@ -25,11 +25,8 @@ namespace DNP2.Assignment5.MultimediaWPF
             string[] allMediaTypes = Enum.GetNames(typeof(MediaType));
 
             // Add all values to combo box
-            foreach (string mediaType in allMediaTypes)
-            {
-                MediaTypeComboBox.Items.Add(mediaType);
-            }
-
+            Array.ForEach(allMediaTypes, mediaType => MediaTypeComboBox.Items.Add(mediaType));
+            
             // Point first item
             MediaTypeComboBox.SelectedIndex = 0;
         }

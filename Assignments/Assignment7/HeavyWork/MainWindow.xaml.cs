@@ -69,10 +69,7 @@ namespace DNP2.Assignment7.HeavyWork
 
         public Task HeavyWorkAsync()
         {
-            return Task.Run(() =>
-            {
-                HeavyWork();
-            });
+            return Task.Run(HeavyWork);
         }
     }
 }
