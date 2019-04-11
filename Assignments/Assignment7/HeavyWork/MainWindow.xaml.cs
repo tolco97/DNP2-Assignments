@@ -26,7 +26,6 @@ namespace DNP2.Assignment7.HeavyWork
             if (OutputTextBox.Text.Length > 0 || _heavyTasks.Count > 0)
             {
                 OutputTextBox.Text = string.Empty;
-                _heavyTasks.ForEach(task => task?.Dispose());
                 _heavyTasks.Clear();
             }
 
