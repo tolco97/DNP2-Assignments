@@ -14,13 +14,7 @@ namespace DNP2.Assignment4.CustomerModel
 
         #region Properties
 
-        public decimal OrdersPrice
-        {
-            get
-            {
-                return Orders?.Sum(order => order.Product.Price) ?? 0;
-            }
-        }
+        public decimal OrdersPrice => Orders?.Sum(order => order.Product.Price) ?? 0;
 
         #endregion
 
