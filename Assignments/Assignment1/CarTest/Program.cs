@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using DNP2.Assignment1.CarModel;
+using DNP2.Helpers.Common;
 
 namespace DNP2.Assignment1.CarTest
 {
@@ -63,43 +64,37 @@ namespace DNP2.Assignment1.CarTest
         {
             Console.WriteLine("SortByMaxSpeedAndPrint:");
             cars.Sort();
-            Console.WriteLine(string.Join("\n", cars));
-            Console.WriteLine();
+            cars.PrintAllElements();
         }
 
         private static void TestCompareToByHorsePower(List<Car> cars)
         {
             Console.WriteLine("TestCompareToByHorsePower:");
             PlayGame(cars[0], cars[1], (car, other) => car.CompareToByHorsePower(other));
-            Console.WriteLine();
         }
 
         private static void TestCompareToByRoundsPerMinute(List<Car> cars)
         {
             Console.WriteLine("TestCompareToByRoundsPerMinute:");
             PlayGame(cars[0], cars[1], (car, other) => car.CompareToByRoundsPerMinute(other));
-            Console.WriteLine();
         }
 
         private static void TestCompareToByEngineSize(List<Car> cars)
         {
             Console.WriteLine("TestCompareToByEngineSize:");
             PlayGame(cars[0], cars[1], (car, other) => car.CompareToByEngineSize(other));
-            Console.WriteLine();
         }
 
         private static void TestCompareToByAcceleration(List<Car> cars)
         {
             Console.WriteLine("TestCompareToByAcceleration:");
             PlayGame(cars[0], cars[1], (car, other) => car.CompareToByAcceleration(other));
-            Console.WriteLine();
         }
 
         private static void TestCompareToByCylinders(List<Car> cars)
         {
             Console.WriteLine("TestCompareToByCylinders:");
             PlayGame(cars[0], cars[1], (car, other) => car.CompareToByCylinders(other));
-            Console.WriteLine();
         }
 
         private static void TestFindCarsByMaxSpeed(List<Car> cars)
@@ -110,13 +105,11 @@ namespace DNP2.Assignment1.CarTest
             };
             Console.WriteLine("TestFindCarsByMaxSpeed above 201 km/h");
             IList<Car> matchingCars = hand.FindCarsByMaxSpeed(201);
-            Console.WriteLine(string.Join("\n", matchingCars));
-            Console.WriteLine();
+            matchingCars.PrintAllElements();
 
             Console.WriteLine("TestFindCarsByMaxSpeed above 250 km/h");
             matchingCars = hand.FindCarsByMaxSpeed(250);
-            Console.WriteLine(string.Join("\n", matchingCars));
-            Console.WriteLine();
+            matchingCars.PrintAllElements();
         }
 
         private static void PlayGame(Car c1, Car c2, Func<Car, Car, int> compareCars)
@@ -124,15 +117,15 @@ namespace DNP2.Assignment1.CarTest
             int comparisonResult = compareCars(c1, c2);
             if (comparisonResult == -1)
             {
-                Console.WriteLine($"{c2.Model} beats {c1.Model}");
+                Console.WriteLine($"{c2.Model} beats {c1.Model}\n");
             }
             else if (comparisonResult == 1)
             {
-                Console.WriteLine($"{c1.Model} beats {c2.Model}");
+                Console.WriteLine($"{c1.Model} beats {c2.Model}\n");
             }
             else
             {
-                Console.WriteLine($"Draw between {c1.Model} and {c2.Model}");
+                Console.WriteLine($"Draw between {c1.Model} and {c2.Model}\n");
             }
         }
 

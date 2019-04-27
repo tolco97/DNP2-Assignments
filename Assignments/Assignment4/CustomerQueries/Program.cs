@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using DNP2.Assignment4.CustomerModel;
+using DNP2.Helpers.Common;
 
 namespace DNP2.Assignment4.CustomerQueries
 {

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.421
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assignment1", "Assignment1", "{3752CA11-35BA-461F-A01E-072EC6A6626A}"
 EndProject
@@ -30,6 +30,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Assignment6", "Assignment6", "{2A522FC9-32B2-41F7-91E7-B226ECFF5D37}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaPlayer", "Assignments\Assignment6\MediaPlayer\MediaPlayer.csproj", "{C3C62DA7-2D9D-4D76-9168-CBE392BB62DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Helpers", "Helpers", "{CEDAB7FB-3B55-4C8A-85BE-2E3F5A37F91D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{EB2FB0E2-7E32-4597-8D08-F83E2A25085B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +73,10 @@ Global
 		{C3C62DA7-2D9D-4D76-9168-CBE392BB62DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3C62DA7-2D9D-4D76-9168-CBE392BB62DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3C62DA7-2D9D-4D76-9168-CBE392BB62DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB2FB0E2-7E32-4597-8D08-F83E2A25085B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB2FB0E2-7E32-4597-8D08-F83E2A25085B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB2FB0E2-7E32-4597-8D08-F83E2A25085B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB2FB0E2-7E32-4597-8D08-F83E2A25085B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,6 +90,7 @@ Global
 		{60016351-E6B1-4452-941D-8BC3D6529672} = {9B0EDB6D-422B-45A2-BFC7-CB5ED740697D}
 		{C33BA91C-8B48-465C-86FC-8780B019D95C} = {8620B459-6268-4F2F-A07A-39A2574014FE}
 		{C3C62DA7-2D9D-4D76-9168-CBE392BB62DD} = {2A522FC9-32B2-41F7-91E7-B226ECFF5D37}
+		{EB2FB0E2-7E32-4597-8D08-F83E2A25085B} = {CEDAB7FB-3B55-4C8A-85BE-2E3F5A37F91D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6FC9C4FE-2E4E-4C00-9FEA-7287C0C86775}
