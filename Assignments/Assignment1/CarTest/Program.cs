@@ -67,37 +67,37 @@ namespace DNP2.Assignment1.CarTest
             cars.PrintAll();
         }
 
-        private static void TestCompareToByHorsePower(List<Car> cars)
+        private static void TestCompareToByHorsePower(IList<Car> cars)
         {
             Console.WriteLine("TestCompareToByHorsePower:");
             PlayGame(cars[0], cars[1], (car, other) => car.CompareToByHorsePower(other));
         }
 
-        private static void TestCompareToByRoundsPerMinute(List<Car> cars)
+        private static void TestCompareToByRoundsPerMinute(IList<Car> cars)
         {
             Console.WriteLine("TestCompareToByRoundsPerMinute:");
             PlayGame(cars[0], cars[1], (car, other) => car.CompareToByRoundsPerMinute(other));
         }
 
-        private static void TestCompareToByEngineSize(List<Car> cars)
+        private static void TestCompareToByEngineSize(IList<Car> cars)
         {
             Console.WriteLine("TestCompareToByEngineSize:");
             PlayGame(cars[0], cars[1], (car, other) => car.CompareToByEngineSize(other));
         }
 
-        private static void TestCompareToByAcceleration(List<Car> cars)
+        private static void TestCompareToByAcceleration(IList<Car> cars)
         {
             Console.WriteLine("TestCompareToByAcceleration:");
             PlayGame(cars[0], cars[1], (car, other) => car.CompareToByAcceleration(other));
         }
 
-        private static void TestCompareToByCylinders(List<Car> cars)
+        private static void TestCompareToByCylinders(IList<Car> cars)
         {
             Console.WriteLine("TestCompareToByCylinders:");
             PlayGame(cars[0], cars[1], (car, other) => car.CompareToByCylinders(other));
         }
 
-        private static void TestFindCarsByMaxSpeed(List<Car> cars)
+        private static void TestFindCarsByMaxSpeed(IList<Car> cars)
         {
             var hand = new Hand
             {

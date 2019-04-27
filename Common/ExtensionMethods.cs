@@ -11,8 +11,7 @@ namespace DNP2.Helpers.Common
         /// <param name="collection">the enumerable</param>
         public static void PrintAll<T>(this IEnumerable<T> collection)
         {
-            Console.WriteLine(string.Join(Environment.NewLine, collection));
-            Console.WriteLine();
+            Console.WriteLine($"{string.Join(Environment.NewLine, collection)}{Environment.NewLine}");
         }
     }
 }
