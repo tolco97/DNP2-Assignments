@@ -64,7 +64,7 @@ namespace DNP2.Assignment1.CarTest
         {
             Console.WriteLine("SortByMaxSpeedAndPrint:");
             cars.Sort();
-            cars.PrintAllElements();
+            cars.PrintAll();
         }
 
         private static void TestCompareToByHorsePower(List<Car> cars)
@@ -105,11 +105,11 @@ namespace DNP2.Assignment1.CarTest
             };
             Console.WriteLine("TestFindCarsByMaxSpeed above 201 km/h");
             IList<Car> matchingCars = hand.FindCarsByMaxSpeed(201);
-            matchingCars.PrintAllElements();
+            matchingCars.PrintAll();
 
             Console.WriteLine("TestFindCarsByMaxSpeed above 250 km/h");
             matchingCars = hand.FindCarsByMaxSpeed(250);
-            matchingCars.PrintAllElements();
+            matchingCars.PrintAll();
         }
 
         private static void PlayGame(Car c1, Car c2, Func<Car, Car, int> compareCars)

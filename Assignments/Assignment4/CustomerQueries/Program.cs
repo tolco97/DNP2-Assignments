@@ -86,14 +86,14 @@ namespace DNP2.Assignment4.CustomerQueries
         private static void PrintAllCustomerNamesAndCities(IEnumerable<Customer> allCustomers)
         {
             allCustomers.Select(customer => new { customer.Name, customer.City })
-                        .PrintAllElements();
+                        .PrintAll();
         }
 
         private static void PrintAllCustomersFromHorsens(IEnumerable<Customer> allCustomers)
         {
             allCustomers.Where(customer => string.Equals(customer.City, "Horsens"))
                         .Select(customer => customer.Name)
-                        .PrintAllElements();
+                        .PrintAll();
         }
 
         private static void PrintOrderCountOfIb(IEnumerable<Customer> allCustomers)
@@ -106,13 +106,13 @@ namespace DNP2.Assignment4.CustomerQueries
         {
             allCustomers.Where(customer => customer.HasOrderedProduct("Milk"))
                         .Select(customer => customer.Name)
-                        .PrintAllElements();
+                        .PrintAll();
         }
 
         private static void PrintCustomerNamesAndTotalPriceOfProducts(IEnumerable<Customer> allCustomers)
         {
             allCustomers.Select(customer => new { customer.Name, customer.OrdersPrice })
-                        .PrintAllElements();
+                        .PrintAll();
         }
 
         private static void PrintTotalCostOfAllOrders(IEnumerable<Customer> allCustomers)

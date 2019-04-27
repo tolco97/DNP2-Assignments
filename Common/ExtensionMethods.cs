@@ -8,10 +8,10 @@ namespace DNP2.Helpers.Common
         /// <summary>
         /// Prints all elements of the enumerable on a new line
         /// </summary>
-        /// <param name="allItems">the enumerable</param>
-        public static void PrintAllElements<T>(this IEnumerable<T> allItems)
+        /// <param name="collection">the enumerable</param>
+        public static void PrintAll<T>(this IEnumerable<T> collection)
         {
-            Console.WriteLine(string.Join("\n", allItems));
+            Console.WriteLine(string.Join(Environment.NewLine, collection));
             Console.WriteLine();
         }
     }
