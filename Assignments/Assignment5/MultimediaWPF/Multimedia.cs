@@ -6,13 +6,29 @@ namespace DNP2.Assignment5.MultimediaWPF
 {
     public class Multimedia : INotifyPropertyChanged
     {
-        public string Artist { get; set; }
+        public string Artist
+        {
+            get => Artist;
+            set { Artist = value; OnPropertyChanged(nameof(Artist)); }
+        }
 
-        public string Genre { get; set; }
+        public string Genre
+        {
+            get => Genre;
+            set { Genre = value; OnPropertyChanged(nameof(Genre)); }
+        }
 
-        public string Title { get; set; }
+        public string Title
+        {
+            get => Title;
+            set { Title = value; OnPropertyChanged(nameof(Title)); }
+        }
 
-        public MediaType Type { get; set; }
+        public MediaType Type
+        {
+            get => Type;
+            set { Type = value; OnPropertyChanged(nameof(Type));}
+        }
 
         public override string ToString()
         {

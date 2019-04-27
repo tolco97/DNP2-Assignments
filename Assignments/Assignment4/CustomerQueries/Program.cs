@@ -84,46 +84,40 @@ namespace DNP2.Assignment4.CustomerQueries
 
         private static void PrintAllCustomerNamesAndCities(IEnumerable<Customer> allCustomers)
         {
-            var queryResult = allCustomers.Select(customer => new { customer.Name, customer.City });
-            Console.WriteLine(string.Join("\n", queryResult));
-            Console.WriteLine();
+            allCustomers.Select(customer => new { customer.Name, customer.City })
+                        .PrintAllElements();
         }
 
         private static void PrintAllCustomersFromHorsens(IEnumerable<Customer> allCustomers)
         {
-            var queryResult = allCustomers.Where(customer => string.Equals(customer.City, "Horsens"))
-                                                            .Select(customer => customer.Name);
-            Console.WriteLine(string.Join("\n", queryResult));
-            Console.WriteLine();
+            allCustomers.Where(customer => string.Equals(customer.City, "Horsens"))
+                        .Select(customer => customer.Name)
+                        .PrintAllElements();
         }
 
         private static void PrintOrderCountOfIb(IEnumerable<Customer> allCustomers)
         {
             var orderCount = allCustomers.First(customer => string.Equals(customer.Name, "Ib Havn")).Orders.Length;
-            Console.WriteLine($"Ib has {orderCount} orders");
-            Console.WriteLine();
+            Console.WriteLine($"Ib has {orderCount} orders\n");
         }
 
         private static void PrintNamesOfCustomersBuyingMilk(IEnumerable<Customer> allCustomers)
         {
-            var queryResult = allCustomers.Where(customer => customer.HasOrderedProduct("Milk"))
-                                                            .Select(customer => customer.Name);
-            Console.WriteLine(string.Join("\n", queryResult));
-            Console.WriteLine();
+            allCustomers.Where(customer => customer.HasOrderedProduct("Milk"))
+                        .Select(customer => customer.Name)
+                        .PrintAllElements();
         }
 
         private static void PrintCustomerNamesAndTotalPriceOfProducts(IEnumerable<Customer> allCustomers)
         {
-            var queryResult = allCustomers.Select(customer => new { customer.Name, customer.OrdersPrice });
-            Console.WriteLine(string.Join("\n", queryResult));
-            Console.WriteLine();
+            allCustomers.Select(customer => new { customer.Name, customer.OrdersPrice })
+                        .PrintAllElements();
         }
 
         private static void PrintTotalCostOfAllOrders(IEnumerable<Customer> allCustomers)
         {
             var totalCost = allCustomers.Sum(customer => customer.OrdersPrice);
-            Console.WriteLine(totalCost);
-            Console.WriteLine();
+            Console.WriteLine($"{totalCost} DKK\n");
         }
 
         #endregion
