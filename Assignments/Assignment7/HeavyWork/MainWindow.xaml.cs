@@ -13,7 +13,7 @@ namespace DNP2.Assignment7.HeavyWork
     public partial class MainWindow : Window
     {
         private readonly Random _random = new Random();
-        private readonly List<Task> _heavyTasks = new List<Task>(3);
+        private readonly IList<Task> _heavyTasks = new List<Task>(3);
 
         public MainWindow()
         {
