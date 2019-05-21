@@ -20,13 +20,23 @@ namespace DNP2.Assignment2.IntListTest
 
         public void Act(IntAction f)
         {
-            ForEach(i => f(i));
+            foreach (int i in this)
+            {
+                f(i);
+            }
         }
 
         public IntList Filter(IntPredicate p)
         {
-            int[] matches = FindAll(i => p(i)).ToArray();
-            return new IntList(matches);
+            var res = new IntList();
+            foreach (int i in this)
+            {
+                if (p(i))
+                {
+                    res.Add(i);
+                }
+            }
+            return res;
         }
     }
 
@@ -41,7 +51,7 @@ namespace DNP2.Assignment2.IntListTest
 
             // Print all even numbers
             Console.WriteLine("\nPrinting all even numbers:");
-            intList.Filter(delegate (int x) { return x % 2 == 0; }).Act(Console.WriteLine);
+            intList.Filter(delegate(int x) { return x % 2 == 0; }).Act(Console.WriteLine);
 
             // Print all numbers above 25
             Console.WriteLine("\nPrinting all numbers above 25");
