@@ -2,7 +2,7 @@
 
 namespace DNP2.Assignment5.MultimediaWPF.Model
 {
-    public class MultimediaList : ObservableCollection<Multimedia>
+    public class MultimediaList
     {
         public static ObservableCollection<Multimedia> Multimedias { get; } = new ObservableCollection<Multimedia>
         {
