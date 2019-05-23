@@ -1,0 +1,32 @@
+﻿<Window x:Class="DNP2.Assignment5.MultimediaWPF.DialogWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Multimedia" Height="450" Width="776" WindowStartupLocation="CenterScreen">
+
+    <Grid Margin="0,10,169.6,83">
+        <Label x:Name="ArtistLabel" Content="Artist" HorizontalAlignment="Left" Margin="142,76,0,0"
+               VerticalAlignment="Top" />
+        <Label x:Name="TitleLabel" Content="Title" HorizontalAlignment="Left" Margin="147,129,0,0"
+               VerticalAlignment="Top" />
+        <Label x:Name="GenreLabel" Content="Genre" HorizontalAlignment="Left" Margin="142,171,0,0"
+               VerticalAlignment="Top" />
+        <Label x:Name="TypeLabel" Content="Media Type" HorizontalAlignment="Left" Margin="142,224,0,0"
+               VerticalAlignment="Top" />
+        <TextBox x:Name="ArtistTextBox" HorizontalAlignment="Left" Height="27" Margin="260,76,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="259" SpellCheck.IsEnabled="True" />
+        <TextBox x:Name="TitleTextBox" HorizontalAlignment="Left" Height="27" Margin="260,128,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="259" SpellCheck.IsEnabled="True" />
+        <TextBox x:Name="GenreTextBox" HorizontalAlignment="Left" Height="27" Margin="260,169,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="259" SpellCheck.IsEnabled="True" />
+        <ComboBox x:Name="MediaTypeComboBox" HorizontalAlignment="Left" Margin="260,227,0,0" VerticalAlignment="Top"
+                  Width="259" SelectedItem="{Binding MediaType}" />
+        <Button Content="OK" HorizontalAlignment="Left" Margin="147,272,0,0" VerticalAlignment="Top"
+                Width="113" Click="OnAddMultimediaClick" Height="28" />
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="406,272,0,0" VerticalAlignment="Top"
+                Width="113" Click="OnCloseButtonClick" Height="28" />
+
+    </Grid>
+</Window>

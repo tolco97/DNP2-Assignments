@@ -1,0 +1,59 @@
+﻿<Window x:Class="DNP2.Assignment5.MultimediaWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:model="clr-namespace:DNP2.Assignment5.MultimediaWPF.Model"
+        mc:Ignorable="d"
+        Title="Multimedia" Height="525.6">
+    <Window.Resources>
+        <model:MultimediaList x:Key="Multimedias" />
+        <DataTemplate x:Key="MultimediaInformation">
+            <Border Width="300" Height="100" BorderThickness="1" Padding="8">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Artist:" HorizontalAlignment="Center" />
+                    <TextBlock Name="ArtistTextBlock" Grid.Row="0" Grid.Column="1" Text="{Binding Path=Artist}"
+                               HorizontalAlignment="Center" />
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Title:" HorizontalAlignment="Center" />
+                    <TextBlock Name="TitleTextBlock" Grid.Row="1" Grid.Column="1" Text="{Binding Path=Title}"
+                               HorizontalAlignment="Center" />
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Genre:" HorizontalAlignment="Center" />
+                    <TextBlock Name="GenreTextBlock" Grid.Row="2" Grid.Column="1" Text="{Binding Path=Genre}"
+                               HorizontalAlignment="Center" />
+                    <TextBlock Grid.Row="3" Grid.Column="0" Text="Media Type:" HorizontalAlignment="Center" />
+                    <TextBlock Name="TypeTextBlock" Grid.Row="3" Grid.Column="1" Text="{Binding Path=Type}"
+                               HorizontalAlignment="Center" />
+                    <Button Grid.Row="4" Grid.ColumnSpan="2" x:Name="AddItemButton" Content="Add New Item"
+                            Click="AddItemButton_Click" HorizontalAlignment="Right" Margin="85,15.667,85,-27"
+                            Grid.RowSpan="2" Width="108" VerticalAlignment="Center" />
+
+                </Grid>
+            </Border>
+        </DataTemplate>
+
+    </Window.Resources>
+
+    <StackPanel Margin="0,0,-0.4,0">
+        <TextBlock FontFamily="Verdana" FontSize="14" FontWeight="SemiBold" TextWrapping="Wrap" Padding="0,18,0,0"
+                   Margin="302,0,299.6,0" HorizontalAlignment="Center">
+            <Run Text="Selected Multimedia" />
+        </TextBlock>
+        <ContentControl Content="{Binding Multimedias, Source={StaticResource Multimedias}}"
+                        ContentTemplate="{StaticResource MultimediaInformation}" Height="143"
+                        HorizontalAlignment="Center" Width="459" Margin="150,0,152.6,0" VerticalAlignment="Center" />
+        <ListBox Name="MultimediaItems" IsSynchronizedWithCurrentItem="True"
+                 ItemsSource="{Binding Multimedias, Source={StaticResource Multimedias}}" Height="176"
+                 Margin="284,0,284.333,0" />
+    </StackPanel>
+</Window>

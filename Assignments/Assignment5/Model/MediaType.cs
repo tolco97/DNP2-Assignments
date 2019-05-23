@@ -1,4 +1,4 @@
-﻿namespace DNP2.Assignment5.MultimediaWPF
+﻿namespace DNP2.Assignment5.MultimediaWPF.Model
 {
     public enum MediaType
     {
