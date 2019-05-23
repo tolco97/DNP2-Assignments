@@ -87,6 +87,12 @@ namespace DNP2.Assignment4.CustomerQueries
         {
             allCustomers.Select(customer => new { customer.Name, customer.City })
                         .PrintAll();
+
+            /*
+            // Alternative approach with tuples
+            allCustomers.Select(customer => (customer.Name, customer.City))
+                .PrintAll();
+            */
         }
 
         private static void PrintAllCustomersFromHorsens(IEnumerable<Customer> allCustomers)
@@ -114,6 +120,12 @@ namespace DNP2.Assignment4.CustomerQueries
         {
             allCustomers.Select(customer => new { customer.Name, customer.OrdersPrice })
                         .PrintAll();
+
+            /*
+             // Alternative approach with tuples
+             allCustomers.Select(customer => (customer.Name, customer.OrdersPrice))
+                        .PrintAll();
+            */
         }
 
         private static void PrintTotalCostOfAllOrders(IEnumerable<Customer> allCustomers)
