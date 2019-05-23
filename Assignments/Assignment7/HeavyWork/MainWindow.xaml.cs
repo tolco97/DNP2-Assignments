@@ -30,19 +30,27 @@ namespace DNP2.Assignment7.HeavyWork
             }
 
             // 1) Start 3 tasks in parallel
-            Parallel.Invoke(() =>
+            await Task.Run(() =>
             {
-                // 2) Indicate that each task has started
-                _heavyTasks.Add(HeavyWorkAsync());
-                Dispatcher.Invoke(() => OutputTextBox.Text += "Task 1 started\n");
-
-                _heavyTasks.Add(HeavyWorkAsync());
-                Dispatcher.Invoke(() => OutputTextBox.Text += "Task 2 started\n");
-
-                _heavyTasks.Add(HeavyWorkAsync());
-                Dispatcher.Invoke(() => OutputTextBox.Text += "Task 3 started\n");
+                Parallel.Invoke(
+                () =>
+                {
+                    // 2) Indicate that each task has started
+                    _heavyTasks.Add(HeavyWorkAsync());
+                    Dispatcher.Invoke(() => OutputTextBox.Text += "Task 1 started\n");
+                },
+                () =>
+                {
+                    _heavyTasks.Add(HeavyWorkAsync());
+                    Dispatcher.Invoke(() => OutputTextBox.Text += "Task 2 started\n");
+                },
+                () =>
+                {
+                    _heavyTasks.Add(HeavyWorkAsync());
+                    Dispatcher.Invoke(() => OutputTextBox.Text += "Task 3 started\n");
+                });
             });
-
+            
             // 3) Update label when all 3 tasks are completed
             await Task.WhenAll(_heavyTasks).ContinueWith(_ =>
             {
