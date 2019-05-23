@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using DNP2.Assignment1.CarModel;
 using DNP2.Helpers.Common;
 
@@ -67,44 +68,44 @@ namespace DNP2.Assignment1.CarTest
             cars.PrintAll();
         }
 
-        private static void TestCompareToByHorsePower(IList<Car> cars)
+        private static void TestCompareToByHorsePower(IEnumerable<Car> cars)
         {
             Console.WriteLine("TestCompareToByHorsePower:");
-            PlayGame(cars[0], cars[1], (car, other) => car.CompareToByHorsePower(other));
+            PlayGame(cars.ElementAt(0), cars.ElementAt(1), (car, other) => car.CompareToByHorsePower(other));
         }
 
-        private static void TestCompareToByRoundsPerMinute(IList<Car> cars)
+        private static void TestCompareToByRoundsPerMinute(IEnumerable<Car> cars)
         {
             Console.WriteLine("TestCompareToByRoundsPerMinute:");
-            PlayGame(cars[0], cars[1], (car, other) => car.CompareToByRoundsPerMinute(other));
+            PlayGame(cars.ElementAt(0), cars.ElementAt(1), (car, other) => car.CompareToByRoundsPerMinute(other));
         }
 
-        private static void TestCompareToByEngineSize(IList<Car> cars)
+        private static void TestCompareToByEngineSize(IEnumerable<Car> cars)
         {
             Console.WriteLine("TestCompareToByEngineSize:");
-            PlayGame(cars[0], cars[1], (car, other) => car.CompareToByEngineSize(other));
+            PlayGame(cars.ElementAt(0), cars.ElementAt(1), (car, other) => car.CompareToByEngineSize(other));
         }
 
-        private static void TestCompareToByAcceleration(IList<Car> cars)
+        private static void TestCompareToByAcceleration(IEnumerable<Car> cars)
         {
             Console.WriteLine("TestCompareToByAcceleration:");
-            PlayGame(cars[0], cars[1], (car, other) => car.CompareToByAcceleration(other));
+            PlayGame(cars.ElementAt(0), cars.ElementAt(1), (car, other) => car.CompareToByAcceleration(other));
         }
 
-        private static void TestCompareToByCylinders(IList<Car> cars)
+        private static void TestCompareToByCylinders(IEnumerable<Car> cars)
         {
             Console.WriteLine("TestCompareToByCylinders:");
-            PlayGame(cars[0], cars[1], (car, other) => car.CompareToByCylinders(other));
+            PlayGame(cars.ElementAt(0), cars.ElementAt(1), (car, other) => car.CompareToByCylinders(other));
         }
 
-        private static void TestFindCarsByMaxSpeed(IList<Car> cars)
+        private static void TestFindCarsByMaxSpeed(IEnumerable<Car> cars)
         {
             var hand = new Hand
             {
                 Cars = cars
             };
             Console.WriteLine("TestFindCarsByMaxSpeed above 201 km/h");
-            IList<Car> matchingCars = hand.FindCarsByMaxSpeed(201);
+            IEnumerable<Car> matchingCars = hand.FindCarsByMaxSpeed(201);
             matchingCars.PrintAll();
 
             Console.WriteLine("TestFindCarsByMaxSpeed above 250 km/h");

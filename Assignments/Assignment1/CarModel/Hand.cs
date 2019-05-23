@@ -5,11 +5,11 @@ namespace DNP2.Assignment1.CarModel
 {
     public class Hand
     {
-        public IList<Car> Cars { get; set; } = new List<Car>();
+        public IEnumerable<Car> Cars { get; set; } = new List<Car>();
 
-        public IList<Car> FindCarsByMaxSpeed(int speed)
+        public IEnumerable<Car> FindCarsByMaxSpeed(int speed)
         {
-            return Cars.Where(car => car.MaxSpeed > speed).ToList();
+            return Cars.Where(car => car.MaxSpeed > speed);
         }
     }
 }
