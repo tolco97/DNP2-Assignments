@@ -88,17 +88,26 @@ namespace DNP2.Assignment4.CustomerQueries
             allCustomers.Select(customer => new { customer.Name, customer.City })
                         .PrintAll();
 
-            /*
             // Alternative approach with tuples
             allCustomers.Select(customer => (customer.Name, customer.City))
-                .PrintAll();
-            */
+                        .PrintAll();
+
+            // Alternative approach with Linq query keywords
+            (from customer in allCustomers
+            select new { customer.Name, customer.City })
+                        .PrintAll();
         }
 
         private static void PrintAllCustomersFromHorsens(IEnumerable<Customer> allCustomers)
         {
             allCustomers.Where(customer => string.Equals(customer.City, "Horsens"))
                         .Select(customer => customer.Name)
+                        .PrintAll();
+
+            // Alternative approach with Linq query keywords
+            (from customer in allCustomers
+            where string.Equals(customer.City, "Horsens")
+            select customer.Name)
                         .PrintAll();
         }
 
@@ -114,6 +123,12 @@ namespace DNP2.Assignment4.CustomerQueries
             allCustomers.Where(customer => customer.HasOrderedProduct("Milk"))
                         .Select(customer => customer.Name)
                         .PrintAll();
+
+             // Alternative approach with Linq query keywords 
+            (from customer in allCustomers
+            where customer.HasOrderedProduct("Milk")
+            select customer.Name)
+                        .PrintAll();
         }
 
         private static void PrintCustomerNamesAndTotalPriceOfProducts(IEnumerable<Customer> allCustomers)
@@ -121,11 +136,14 @@ namespace DNP2.Assignment4.CustomerQueries
             allCustomers.Select(customer => new { customer.Name, customer.OrdersPrice })
                         .PrintAll();
 
-            /*
+            // Alternative approach with Linq query keywords 
+            (from customer in allCustomers
+            select new { customer.Name, customer.OrdersPrice })
+                        .PrintAll();
+            
              // Alternative approach with tuples
              allCustomers.Select(customer => (customer.Name, customer.OrdersPrice))
                         .PrintAll();
-            */
         }
 
         private static void PrintTotalCostOfAllOrders(IEnumerable<Customer> allCustomers)
