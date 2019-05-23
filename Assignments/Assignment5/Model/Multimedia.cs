@@ -4,17 +4,16 @@ namespace DNP2.Assignment5.MultimediaWPF.Model
 {
     public class Multimedia : INotifyPropertyChanged
     {
-        private string _title;
         private string _artist;
         private string _genre;
+        private string _title;
         private MediaType _type;
-
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public string Title
         {
             get => _title;
-            set {
+            set
+            {
                 _title = value;
                 OnPropertyRaised(nameof(Title));
             }
@@ -49,7 +48,9 @@ namespace DNP2.Assignment5.MultimediaWPF.Model
                 OnPropertyRaised(nameof(Type));
             }
         }
-       
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private void OnPropertyRaised(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

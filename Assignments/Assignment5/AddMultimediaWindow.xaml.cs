@@ -36,7 +36,7 @@ namespace DNP2.Assignment5.MultimediaWPF
 
             if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(artist) || string.IsNullOrEmpty(genre))
             {
-                MessageBox.Show("Invalid input.", "Multimedias", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Invalid input.", "Multimedia", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
