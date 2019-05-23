@@ -8,7 +8,7 @@
         Title="Multimedia" Height="525.6">
     <Window.Resources>
         <model:MultimediaList x:Key="Multimedias" />
-        <DataTemplate x:Key="MultimediaInformation">
+        <DataTemplate x:Key="MultimediaData">
             <Border Width="300" Height="100" BorderThickness="1" Padding="8">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -50,7 +50,7 @@
             <Run Text="Selected Multimedia" />
         </TextBlock>
         <ContentControl Content="{Binding Multimedias, Source={StaticResource Multimedias}}"
-                        ContentTemplate="{StaticResource MultimediaInformation}" Height="143"
+                        ContentTemplate="{StaticResource MultimediaData}" Height="143"
                         HorizontalAlignment="Center" Width="459" Margin="150,0,152.6,0" VerticalAlignment="Center" />
         <ListBox Name="MultimediaItems" IsSynchronizedWithCurrentItem="True"
                  ItemsSource="{Binding Multimedias, Source={StaticResource Multimedias}}" Height="176"

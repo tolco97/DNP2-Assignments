@@ -55,8 +55,8 @@ namespace DNP2.Assignment5.MultimediaWPF
 
         private void PopulateMediaTypeComboBox()
         {
-            var multimedias = Enum.GetValues(typeof(MediaType));
-            MediaTypeComboBox.ItemsSource = multimedias;
+            Array multimediaTypes = Enum.GetValues(typeof(MediaType));
+            MediaTypeComboBox.ItemsSource = multimediaTypes;
         }
 
         private void OnCloseButtonClick(object sender, RoutedEventArgs e)
