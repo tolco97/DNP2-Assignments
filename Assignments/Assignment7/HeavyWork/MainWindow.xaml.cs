@@ -35,8 +35,9 @@ namespace DNP2.Assignment7.HeavyWork
                 Parallel.Invoke(
                 () =>
                 {
-                    // 2) Indicate that each task has started
                     _heavyTasks.Add(HeavyWorkAsync());
+
+                    // 2) Indicate that each task has started
                     Dispatcher.Invoke(() => OutputTextBox.Text += "Task 1 started\n");
                 },
                 () =>
