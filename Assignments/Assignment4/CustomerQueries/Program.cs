@@ -114,6 +114,11 @@ namespace DNP2.Assignment4.CustomerQueries
         private static void PrintOrderCountOfIb(IEnumerable<Customer> allCustomers)
         {
             var orderCount = allCustomers.First(customer => string.Equals(customer.Name, "Ib Havn")).Orders
+                                         .Length;
+            Console.WriteLine($"Ib has {orderCount} orders\n");
+
+            // Alternative approach with Linq .Count()
+            orderCount = allCustomers.First(customer => string.Equals(customer.Name, "Ib Havn")).Orders
                                          .Count();
             Console.WriteLine($"Ib has {orderCount} orders\n");
         }
