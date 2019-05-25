@@ -154,7 +154,7 @@ namespace DNP2.Assignment4.CustomerQueries
         private static void PrintTotalCostOfAllOrders(IEnumerable<Customer> allCustomers)
         {
             var totalCost = allCustomers.Sum(customer => customer.OrdersPrice);
-            Console.WriteLine($"{totalCost} DKK\n");
+            Console.WriteLine($"{totalCost} DKK");
         }
 
         #endregion
