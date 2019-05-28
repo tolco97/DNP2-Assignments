@@ -46,20 +46,26 @@ namespace DNP2.Assignment2.IntListTest
         {
             // Print all numbers 
             Console.WriteLine("Printing all numbers");
-            var intList = new IntList(Enumerable.Range(1, 50).ToArray());
-            intList.Act(Console.WriteLine);
+            var xs = new IntList(Enumerable.Range(1, 50).ToArray());
+            xs.Act(Console.WriteLine);
 
             // Print all even numbers
             Console.WriteLine("\nPrinting all even numbers:");
-            intList.Filter(delegate(int x) { return x % 2 == 0; }).Act(Console.WriteLine);
+            xs.Filter(delegate(int x) { return x % 2 == 0; }).Act(Console.WriteLine);
 
             // Print all numbers above 25
             Console.WriteLine("\nPrinting all numbers above 25");
-            intList.Filter(delegate(int x) { return x > 25; }).Act(Console.WriteLine);
+            xs.Filter(delegate(int x) { return x > 25; }).Act(Console.WriteLine);
+
+            /* There are 3 IntList instances in total:
+             * 1. xs
+             * 2. Output IntList for xs.Filter(delegate(int x) { return x % 2 == 0; }).Act(Console.WriteLine);
+             * 3. Output IntList for xs.Filter(delegate(int x) { return x > 25; }).Act(Console.WriteLine);
+             */
 
             // Sum and print all numbers in the list
             int sum = 0;
-            intList.Act(delegate(int x) { sum += x; });
+            xs.Act(delegate(int x) { sum += x; });
             Console.WriteLine($"\nThe sum of all the numbers is {sum}");
         }
     }
