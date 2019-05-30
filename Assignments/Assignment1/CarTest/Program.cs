@@ -63,38 +63,38 @@ namespace DNP2.Assignment1.CarTest
 
         private static void SortByMaxSpeedAndPrint(List<Car> cars)
         {
-            Console.WriteLine("SortByMaxSpeedAndPrint:");
+            Console.WriteLine(nameof(SortByMaxSpeedAndPrint));
             cars.Sort();
             cars.PrintAll();
         }
 
         private static void TestCompareToByHorsePower(IEnumerable<Car> cars)
         {
-            Console.WriteLine("TestCompareToByHorsePower:");
+            Console.WriteLine(nameof(TestCompareToByHorsePower));
             PlayGame(cars.ElementAt(0), cars.ElementAt(1), (car, other) => car.CompareToByHorsePower(other));
         }
 
         private static void TestCompareToByRoundsPerMinute(IEnumerable<Car> cars)
         {
-            Console.WriteLine("TestCompareToByRoundsPerMinute:");
+            Console.WriteLine(nameof(TestCompareToByRoundsPerMinute));
             PlayGame(cars.ElementAt(0), cars.ElementAt(1), (car, other) => car.CompareToByRoundsPerMinute(other));
         }
 
         private static void TestCompareToByEngineSize(IEnumerable<Car> cars)
         {
-            Console.WriteLine("TestCompareToByEngineSize:");
+            Console.WriteLine(nameof(TestCompareToByEngineSize));
             PlayGame(cars.ElementAt(0), cars.ElementAt(1), (car, other) => car.CompareToByEngineSize(other));
         }
 
         private static void TestCompareToByAcceleration(IEnumerable<Car> cars)
         {
-            Console.WriteLine("TestCompareToByAcceleration:");
+            Console.WriteLine(nameof(TestCompareToByHorsePower));
             PlayGame(cars.ElementAt(0), cars.ElementAt(1), (car, other) => car.CompareToByAcceleration(other));
         }
 
         private static void TestCompareToByCylinders(IEnumerable<Car> cars)
         {
-            Console.WriteLine("TestCompareToByCylinders:");
+            Console.WriteLine(nameof(TestCompareToByCylinders));
             PlayGame(cars.ElementAt(0), cars.ElementAt(1), (car, other) => car.CompareToByCylinders(other));
         }
 
@@ -104,11 +104,11 @@ namespace DNP2.Assignment1.CarTest
             {
                 Cars = cars
             };
-            Console.WriteLine("TestFindCarsByMaxSpeed above 201 km/h");
+            Console.WriteLine($"{nameof(TestFindCarsByMaxSpeed)} above 201 km/h");
             IEnumerable<Car> matchingCars = hand.FindCarsByMaxSpeed(201);
             matchingCars.PrintAll();
 
-            Console.WriteLine("TestFindCarsByMaxSpeed above 250 km/h");
+            Console.WriteLine($"{nameof(TestFindCarsByMaxSpeed)} above 250 km/h");
             matchingCars = hand.FindCarsByMaxSpeed(250);
             matchingCars.PrintAll();
         }
