@@ -68,7 +68,7 @@ namespace DNP2.Assignments.MediaPlayer
 
         private void MediaPlayer_OnMediaFailed(object sender, ExceptionRoutedEventArgs e)
         {
-            MessageBox.Show("Media loading unsuccessful. " + e.ErrorException.Message);
+            MessageBox.Show($"Media loading unsuccessful. {e.ErrorException.Message}");
         }
 
         private void ProgressBar_OnValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
