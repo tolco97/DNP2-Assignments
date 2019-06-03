@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -20,36 +21,59 @@ namespace DNP2.Assignment7.HeavyWork
             InitializeComponent();
         }
 
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            // Clean - up
+            foreach (Task task in _heavyTasks)
+            {
+                task.Dispose();
+            }
+            _heavyTasks.Clear();
+            base.OnClosing(e);
+        }
+
         private async void StartButtonOnClick(object sender, RoutedEventArgs e)
         {
             // Fresh start every button click
             if (OutputTextBox.Text.Length > 0 || _heavyTasks.Count > 0)
             {
                 OutputTextBox.Text = string.Empty;
+                foreach (Task task in _heavyTasks)
+                {
+                    task.Dispose();
+                }
                 _heavyTasks.Clear();
             }
 
             // 1) Start 3 tasks in parallel
             await Task.Run(() =>
             {
-                Parallel.Invoke(
-                () =>
-                {
-                    _heavyTasks.Add(HeavyWorkAsync());
+                Parallel.Invoke
+                (
+                    async () =>
+                    {
+                        Task t1 = HeavyWorkAsync();
+                        _heavyTasks.Add(t1);
 
-                    // 2) Indicate that each task has started
-                    Dispatcher.Invoke(() => OutputTextBox.Text += "Task 1 started\n");
-                },
-                () =>
-                {
-                    _heavyTasks.Add(HeavyWorkAsync());
-                    Dispatcher.Invoke(() => OutputTextBox.Text += "Task 2 started\n");
-                },
-                () =>
-                {
-                    _heavyTasks.Add(HeavyWorkAsync());
-                    Dispatcher.Invoke(() => OutputTextBox.Text += "Task 3 started\n");
-                });
+                        // 2) Indicate that each task has started
+                        Dispatcher.Invoke(() => OutputTextBox.Text += "Task 1 started\n");
+                        await t1;
+                    },
+                    async () =>
+                    {
+                        Task t2 = HeavyWorkAsync();
+                        _heavyTasks.Add(t2);
+                        Dispatcher.Invoke(() => OutputTextBox.Text += "Task 2 started\n");
+                        await t2;
+                    },
+                    async () =>
+                    {
+                        Task t3 = HeavyWorkAsync();
+                        _heavyTasks.Add(t3);
+                        Dispatcher.Invoke(() => OutputTextBox.Text += "Task 3 started\n");
+                        await t3;
+                    }
+                );
             });
             
             // 3) Update label when all 3 tasks are completed
