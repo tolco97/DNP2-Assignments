@@ -34,7 +34,7 @@ namespace DNP2.Assignment5.MultimediaWPF
         {
             string title = TitleTextBox.Text, artist = ArtistTextBox.Text, genre = GenreTextBox.Text;
 
-            if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(artist) || string.IsNullOrEmpty(genre))
+            if (string.IsNullOrWhiteSpace(title) || string.IsNullOrWhiteSpace(artist) || string.IsNullOrWhiteSpace(genre))
             {
                 MessageBox.Show("Invalid input.", "Multimedia", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
