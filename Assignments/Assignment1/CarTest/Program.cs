@@ -61,10 +61,12 @@ namespace DNP2.Assignment1.CarTest
             TestFindCarsByMaxSpeed(cars);
         }
 
-        private static void SortByMaxSpeedAndPrint(List<Car> cars)
+        private static void SortByMaxSpeedAndPrint(IEnumerable<Car> cars)
         {
             Console.WriteLine(nameof(SortByMaxSpeedAndPrint));
-            cars.Sort();
+            var sortedCars = cars.ToList();
+            sortedCars.Sort();
+            cars = sortedCars;
             cars.PrintAll();
         }
 
