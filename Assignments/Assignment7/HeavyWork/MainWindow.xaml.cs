@@ -14,7 +14,7 @@ namespace DNP2.Assignment7.HeavyWork
     public partial class MainWindow : Window
     {
         private readonly Random _random = new Random();
-        private readonly IList<Task> _heavyTasks = new List<Task>(3);
+        private readonly List<Task> _heavyTasks = new List<Task>(3);
 
         public MainWindow()
         {
@@ -24,10 +24,7 @@ namespace DNP2.Assignment7.HeavyWork
         protected override void OnClosing(CancelEventArgs e)
         {
             // Clean - up
-            foreach (Task task in _heavyTasks)
-            {
-                task.Dispose();
-            }
+            _heavyTasks.ForEach(task => task.Dispose());
             _heavyTasks.Clear();
             base.OnClosing(e);
         }
@@ -38,10 +35,7 @@ namespace DNP2.Assignment7.HeavyWork
             if (OutputTextBox.Text.Length > 0 || _heavyTasks.Count > 0)
             {
                 OutputTextBox.Text = string.Empty;
-                foreach (Task task in _heavyTasks)
-                {
-                    task.Dispose();
-                }
+                _heavyTasks.ForEach(task => task.Dispose());
                 _heavyTasks.Clear();
             }
 
@@ -53,24 +47,28 @@ namespace DNP2.Assignment7.HeavyWork
                     async () =>
                     {
                         Task t1 = HeavyWorkAsync();
-                        _heavyTasks.Add(t1);
 
-                        // 2) Indicate that each task has started
-                        Dispatcher.Invoke(() => OutputTextBox.Text += "Task 1 started\n");
+                        _heavyTasks.Add(t1);
+                        Dispatcher.Invoke(() => OutputTextBox.Text += "Task 1 started\n"); // 2) Indicate that each task has started
+
                         await t1;
                     },
                     async () =>
                     {
                         Task t2 = HeavyWorkAsync();
+
                         _heavyTasks.Add(t2);
-                        Dispatcher.Invoke(() => OutputTextBox.Text += "Task 2 started\n");
+                        Dispatcher.Invoke(() => OutputTextBox.Text += "Task 2 started\n"); // 2) Indicate that each task has started
+
                         await t2;
                     },
                     async () =>
                     {
                         Task t3 = HeavyWorkAsync();
+
                         _heavyTasks.Add(t3);
-                        Dispatcher.Invoke(() => OutputTextBox.Text += "Task 3 started\n");
+                        Dispatcher.Invoke(() => OutputTextBox.Text += "Task 3 started\n"); // 2) Indicate that each task has started
+
                         await t3;
                     }
                 );
