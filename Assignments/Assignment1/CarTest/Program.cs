@@ -65,7 +65,7 @@ namespace DNP2.Assignment1.CarTest
         {
             Console.WriteLine(nameof(SortByMaxSpeedAndPrint));
             var sortedCars = cars.ToList();
-            sortedCars.Sort();
+            sortedCars.Sort(); // sortedCars.OrderBy(car => car.MaxSpeed)
             cars = sortedCars;
             cars.PrintAll();
         }
