@@ -52,10 +52,12 @@ namespace DNP2.Assignment2.IntListTest
             // Print all even numbers
             Console.WriteLine("\nPrinting all even numbers:");
             xs.Filter(delegate(int x) { return x % 2 == 0; }).Act(Console.WriteLine);
+            //xs.Filter(x => x % 2 == 0).Act(Console.WriteLine);
 
             // Print all numbers above 25
             Console.WriteLine("\nPrinting all numbers above 25");
             xs.Filter(delegate(int x) { return x > 25; }).Act(Console.WriteLine);
+            //xs.Filter(x => x > 25).Act(Console.WriteLine);
 
             /* There are 3 IntList instances in total:
              * 1. xs
