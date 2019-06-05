@@ -92,7 +92,7 @@ namespace DNP2.Assignment4.CustomerQueries
             allCustomers.Select(customer => (customer.Name, customer.City))
                         .PrintAll();
 
-            // Alternative approach with Linq query keywords
+            // Alternative approach with Linq query expressions
             (from customer in allCustomers
             select new { customer.Name, customer.City })
                         .PrintAll();
@@ -104,7 +104,7 @@ namespace DNP2.Assignment4.CustomerQueries
                         .Select(customer => customer.Name)
                         .PrintAll();
 
-            // Alternative approach with Linq query keywords
+            // Alternative approach with Linq query expressions
             (from customer in allCustomers
             where string.Equals(customer.City, "Horsens")
             select customer.Name)
@@ -129,7 +129,7 @@ namespace DNP2.Assignment4.CustomerQueries
                         .Select(customer => customer.Name)
                         .PrintAll();
 
-             // Alternative approach with Linq query keywords 
+            // Alternative approach with Linq query expressions 
             (from customer in allCustomers
             where customer.HasOrderedProduct("Milk")
             select customer.Name)
@@ -141,7 +141,7 @@ namespace DNP2.Assignment4.CustomerQueries
             allCustomers.Select(customer => new { customer.Name, customer.OrdersPrice })
                         .PrintAll();
 
-            // Alternative approach with Linq query keywords 
+            // Alternative approach with Linq query expressions 
             (from customer in allCustomers
             select new { customer.Name, customer.OrdersPrice })
                         .PrintAll();
