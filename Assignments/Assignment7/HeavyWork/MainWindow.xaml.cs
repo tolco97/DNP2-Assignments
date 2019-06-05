@@ -23,7 +23,7 @@ namespace DNP2.Assignment7.HeavyWork
 
         protected override void OnClosing(CancelEventArgs e)
         {
-            // Clean - up
+            // Clean-up
             _heavyTasks.ForEach(task => task.Dispose());
             _heavyTasks.Clear();
             base.OnClosing(e);
