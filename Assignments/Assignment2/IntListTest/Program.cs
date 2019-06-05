@@ -72,10 +72,11 @@ namespace DNP2.Assignment2.IntListTest
             Console.WriteLine($"\nThe sum of all the numbers is {sum}");
         }
 
+        /*
         private static bool IsEven(int x)
         {
             return x % 2 == 0;
         }
-
+        */
     }
 }
