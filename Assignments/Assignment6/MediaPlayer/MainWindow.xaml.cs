@@ -41,7 +41,7 @@ namespace DNP2.Assignments.MediaPlayer
             {
                 MediaViewer.Source = new Uri(openFileDialog.FileName);
 
-                // Update progress label
+                // Update file playing label
                 FilePlayingLabel.Content = $"Playing: {Path.GetFileName(openFileDialog.FileName)}";
 
                 // Update progress bar
