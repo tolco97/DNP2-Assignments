@@ -4,14 +4,10 @@ using System.Linq;
 
 namespace DNP2.Assignment2.IntListTest
 {
-    // Delegate types to describe predicates on ints and actions on ints.
     public delegate bool IntPredicate(int x);
 
     public delegate void IntAction(int x);
 
-    // Integer lists with Act and Filter operations.
-    // An IntList containing the element 7 9 13 may be constructed as
-    // new IntList(7, 9, 13) due to the params modifier.
     internal class IntList : List<int>
     {
         public IntList(params int[] elements) : base(elements)
