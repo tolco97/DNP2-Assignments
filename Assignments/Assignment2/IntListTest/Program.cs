@@ -59,7 +59,7 @@ namespace DNP2.Assignment2.IntListTest
             /* There are 3 IntList instances in total:
              * 1. xs
              * 2. Output IntList for xs.Filter(delegate(int x) { return x % 2 == 0; }).Act(Console.WriteLine);
-             * 3. Output IntList for xs.Filter(delegate(int x) { return x > 25; }).Act(Console.WriteLine);
+             * 3. Output IntList for xs.Filter(delegate(int x) { return x >= 25; }).Act(Console.WriteLine);
              */
 
             // Sum and print all numbers in the list
