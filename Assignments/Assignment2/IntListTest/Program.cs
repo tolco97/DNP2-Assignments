@@ -52,7 +52,7 @@ namespace DNP2.Assignment2.IntListTest
             // xs.Filter(IsEven).Act(Console.WriteLine);
 
             // Print all numbers above 25
-            Console.WriteLine("\nPrinting all numbers above 25");
+            Console.WriteLine("\nPrinting all numbers grater or equal to 25");
             xs.Filter(delegate(int x) { return x >= 25; }).Act(Console.WriteLine);
             // xs.Filter(x => x >= 25).Act(Console.WriteLine);
 
