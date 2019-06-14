@@ -47,13 +47,13 @@ namespace DNP2.Assignment2.IntListTest
 
             // Print all even numbers
             Console.WriteLine("\nPrinting all even numbers:");
-            xs.Filter(delegate(int x) { return x % 2 == 0; }).Act(Console.WriteLine);
+            xs.Filter(delegate (int x) { return x % 2 == 0; }).Act(Console.WriteLine);
             // xs.Filter(x => x % 2 == 0).Act(Console.WriteLine);
             // xs.Filter(IsEven).Act(Console.WriteLine);
 
             // Print all numbers greater or equal to 25
             Console.WriteLine("\nPrinting all numbers greater or equal to 25");
-            xs.Filter(delegate(int x) { return x >= 25; }).Act(Console.WriteLine);
+            xs.Filter(delegate (int x) { return x >= 25; }).Act(Console.WriteLine);
             // xs.Filter(x => x >= 25).Act(Console.WriteLine);
 
             /* There are 3 IntList instances in total:
@@ -64,7 +64,7 @@ namespace DNP2.Assignment2.IntListTest
 
             // Sum and print all numbers in the list
             int sum = 0;
-            xs.Act(delegate(int x) { sum += x; });
+            xs.Act(delegate (int x) { sum += x; });
             Console.WriteLine($"\nThe sum of all the numbers is {sum}");
         }
 
