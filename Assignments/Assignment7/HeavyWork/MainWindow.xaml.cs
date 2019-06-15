@@ -39,13 +39,14 @@ namespace DNP2.Assignment7.HeavyWork
                 _heavyTasks.Clear();
             }
 
-            OutputTextBox.Text += "Task 1 started\n"; // 2) Indicate that each task has started
+            // 1) Start 3 tasks in parallel 2) Indicate that each task has started
+            OutputTextBox.Text += "Task 1 started\n"; 
             _heavyTasks.Add(HeavyWorkAsync());
 
-            OutputTextBox.Text += "Task 2 started\n"; // 2) Indicate that each task has started
+            OutputTextBox.Text += "Task 2 started\n";
             _heavyTasks.Add(HeavyWorkAsync());
 
-            OutputTextBox.Text += "Task 3 started\n"; // 2) Indicate that each task has started
+            OutputTextBox.Text += "Task 3 started\n";
             _heavyTasks.Add(HeavyWorkAsync());
         
             // 4) If not all 3 tasks are completed within 8 seconds indicate that there is still work to be done
