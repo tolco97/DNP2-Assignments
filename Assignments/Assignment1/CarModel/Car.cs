@@ -19,11 +19,10 @@ namespace DNP2.Assignment1.CarModel
             {
                 return 0;
             }
-            if (ReferenceEquals(null, other))
-            {
-                return 1;
-            }
-            return MaxSpeed.CompareTo(other.MaxSpeed);
+
+            return other is null 
+                ? 1 
+                : MaxSpeed.CompareTo(other.MaxSpeed);
         }
 
         public int CompareToByHorsePower(Car other)
@@ -32,11 +31,10 @@ namespace DNP2.Assignment1.CarModel
             {
                 return 0;
             }
-            if (ReferenceEquals(null, other))
-            {
-                return 1;
-            }
-            return HorsePower.CompareTo(other.HorsePower);
+
+            return other is null 
+                ? 1 
+                : HorsePower.CompareTo(other.HorsePower);
         }
 
         public int CompareToByRoundsPerMinute(Car other)
@@ -45,11 +43,10 @@ namespace DNP2.Assignment1.CarModel
             {
                 return 0;
             }
-            if (ReferenceEquals(null, other))
-            {
-                return 1;
-            }
-            return RoundsPerMinute.CompareTo(other.RoundsPerMinute);
+
+            return other is null 
+                ? 1 
+                : RoundsPerMinute.CompareTo(other.RoundsPerMinute);
         }
 
         public int CompareToByEngineSize(Car other)
@@ -58,11 +55,10 @@ namespace DNP2.Assignment1.CarModel
             {
                 return 0;
             }
-            if (ReferenceEquals(null, other))
-            {
-                return 1;
-            }
-            return EngineSize.CompareTo(other.EngineSize);
+
+            return other is null 
+                ? 1 
+                : EngineSize.CompareTo(other.EngineSize);
         }
 
         public int CompareToByAcceleration(Car other)
@@ -71,11 +67,10 @@ namespace DNP2.Assignment1.CarModel
             {
                 return 0;
             }
-            if (ReferenceEquals(null, other))
-            {
-                return 1;
-            }
-            return Acceleration.CompareTo(other.Acceleration);
+
+            return other is null 
+                ? 1 
+                : Acceleration.CompareTo(other.Acceleration);
         }
 
         public int CompareToByCylinders(Car other)
@@ -84,11 +79,10 @@ namespace DNP2.Assignment1.CarModel
             {
                 return 0;
             }
-            if (ReferenceEquals(null, other))
-            {
-                return 1;
-            }
-            return Cylinders.CompareTo(other.Cylinders);
+
+            return other is null 
+                ? 1 
+                : Cylinders.CompareTo(other.Cylinders);
         }
 
         public override string ToString()
