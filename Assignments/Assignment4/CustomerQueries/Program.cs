@@ -141,13 +141,13 @@ namespace DNP2.Assignment4.CustomerQueries
             allCustomers.Select(customer => new { customer.Name, customer.OrdersPrice })
                         .PrintAll();
 
+            // Alternative approach with tuples
+            allCustomers.Select(customer => (customer.Name, customer.OrdersPrice))
+                        .PrintAll();
+
             // Alternative approach with Linq query expressions 
             (from customer in allCustomers
             select new { customer.Name, customer.OrdersPrice })
-                        .PrintAll();
-            
-            // Alternative approach with tuples
-            allCustomers.Select(customer => (customer.Name, customer.OrdersPrice))
                         .PrintAll();
         }
 
