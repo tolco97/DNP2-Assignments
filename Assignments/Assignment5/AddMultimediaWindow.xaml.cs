@@ -5,12 +5,12 @@ using DNP2.Assignment5.MultimediaWPF.Model;
 
 namespace DNP2.Assignment5.MultimediaWPF
 {
-    public partial class DialogWindow : INotifyPropertyChanged
+    public partial class AddMultimediaWindow : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         private MediaType _mediaType;
 
-        public DialogWindow()
+        public AddMultimediaWindow()
         {
             InitializeComponent();
             PopulateMediaTypeComboBox();

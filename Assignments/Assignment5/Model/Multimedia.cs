@@ -35,7 +35,7 @@ namespace DNP2.Assignment5.MultimediaWPF.Model
             set
             {
                 _genre = value;
-                OnPropertyRaised(nameof(_genre));
+                OnPropertyRaised(nameof(Genre));
             }
         }
 

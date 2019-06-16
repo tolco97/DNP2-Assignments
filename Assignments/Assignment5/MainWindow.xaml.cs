@@ -13,7 +13,7 @@ namespace DNP2.Assignment5.MultimediaWPF
 
         private void AddItemButton_Click(object sender, RoutedEventArgs e)
         {
-            new DialogWindow().ShowDialog();
+            new AddMultimediaWindow().ShowDialog();
         }
         
     }
