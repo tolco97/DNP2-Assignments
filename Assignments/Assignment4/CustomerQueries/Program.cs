@@ -149,12 +149,6 @@ namespace DNP2.Assignment4.CustomerQueries
             (from customer in allCustomers
             select new { customer.Name, customer.OrdersPrice })
                         .PrintAll();
-
-            // Alternative approach with Linq query expressions & let 
-            (from customer in allCustomers
-            let OrdersPrice = customer.OrdersPrice
-            select new { customer.Name, OrdersPrice })
-                        .PrintAll();
         }
 
         private static void PrintTotalCostOfAllOrders(IEnumerable<Customer> allCustomers)
