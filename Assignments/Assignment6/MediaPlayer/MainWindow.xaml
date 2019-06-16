@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="522.973" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Media Player" Height="522.973" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <MediaElement Name="MediaViewer" HorizontalAlignment="Left" Height="331" Margin="0,47,-0.4,0"
                       VerticalAlignment="Top" Width="794" LoadedBehavior="Manual"
