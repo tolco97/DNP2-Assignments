@@ -15,7 +15,7 @@ namespace DNP2.Assignment5.MultimediaWPF.Model
             set
             {
                 _title = value;
-                OnPropertyRaised(nameof(Title));
+                OnPropertyChanged(nameof(Title));
             }
         }
 
@@ -25,7 +25,7 @@ namespace DNP2.Assignment5.MultimediaWPF.Model
             set
             {
                 _artist = value;
-                OnPropertyRaised(nameof(Artist));
+                OnPropertyChanged(nameof(Artist));
             }
         }
 
@@ -35,7 +35,7 @@ namespace DNP2.Assignment5.MultimediaWPF.Model
             set
             {
                 _genre = value;
-                OnPropertyRaised(nameof(Genre));
+                OnPropertyChanged(nameof(Genre));
             }
         }
 
@@ -45,13 +45,13 @@ namespace DNP2.Assignment5.MultimediaWPF.Model
             set
             {
                 _type = value;
-                OnPropertyRaised(nameof(Type));
+                OnPropertyChanged(nameof(Type));
             }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void OnPropertyRaised(string propertyName)
+        protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
