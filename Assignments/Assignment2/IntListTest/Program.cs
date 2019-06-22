@@ -41,7 +41,7 @@ namespace DNP2.Assignment2.IntListTest
         public static void Main(string[] args)
         {
             // Print all numbers 
-            Console.WriteLine("Printing all numbers");
+            Console.WriteLine("Printing all numbers:");
             var xs = new IntList(Enumerable.Range(1, 50).ToArray());
             xs.Act(Console.WriteLine);
 
@@ -52,7 +52,7 @@ namespace DNP2.Assignment2.IntListTest
             // xs.Filter(IsEven).Act(Console.WriteLine);
 
             // Print all numbers greater or equal to 25
-            Console.WriteLine("\nPrinting all numbers greater or equal to 25");
+            Console.WriteLine("\nPrinting all numbers greater or equal to 25:");
             xs.Filter(delegate (int x) { return x >= 25; }).Act(Console.WriteLine);
             // xs.Filter(x => x >= 25).Act(Console.WriteLine);
 
