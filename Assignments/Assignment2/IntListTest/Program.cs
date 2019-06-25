@@ -16,22 +16,19 @@ namespace DNP2.Assignment2.IntListTest
 
         public void Act(IntAction f)
         {
-            foreach (int i in this)
-            {
-                f(i);
-            }
+            ForEach(i => f(i));
         }
 
         public IntList Filter(IntPredicate p)
         {
             var res = new IntList();
-            foreach (int i in this)
+            ForEach(i => 
             {
                 if (p(i))
                 {
                     res.Add(i);
                 }
-            }
+            });
             return res;
         }
     }
